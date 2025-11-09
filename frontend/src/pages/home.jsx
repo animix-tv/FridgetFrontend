@@ -51,7 +51,8 @@ const Home = () => {
     if (!menuName) return null;
     try {
       const query = encodeURIComponent(menuName);
-
+      const apiKey = "AIzaSyBCDfR6zg8yTvPssHCXU_sfU9EvK3ZQmbU"; 
+      const searchEngineId = "1100c7fd8d38c42eb";
       const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${query}&searchType=image`;
       const response = await axios.get(apiUrl);
       return response.data.items?.[0]?.link || null;
